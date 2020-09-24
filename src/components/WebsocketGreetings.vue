@@ -12,14 +12,18 @@
                 type="submit"
                 :disabled="connected == true"
                 @click.prevent="connect"
-              >Connect</button>
+              >
+                Connect
+              </button>
               <button
                 id="disconnect"
                 class="btn btn-default"
                 type="submit"
                 :disabled="connected == false"
                 @click.prevent="disconnect"
-              >Disconnect</button>
+              >
+                Disconnect
+              </button>
             </div>
           </form>
         </div>
@@ -35,7 +39,14 @@
                 placeholder="Your name here..."
               />
             </div>
-            <button id="send" class="btn btn-default" type="submit" @click.prevent="send">Send</button>
+            <button
+              id="send"
+              class="btn btn-default"
+              type="submit"
+              @click.prevent="send"
+            >
+              Send
+            </button>
           </form>
         </div>
       </div>
@@ -109,9 +120,8 @@ export default {
     },
   },
   mounted() {
-    this.connect();
+    //this.connect();
   },
 };
 </script>
-<style scoped="">
-</style>
+<style scoped=""></style>

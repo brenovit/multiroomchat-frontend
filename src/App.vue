@@ -1,14 +1,21 @@
 <template>
   <div class="home">
-    <websocket-greetings></websocket-greetings>
+    <main-chat-component></main-chat-component>
   </div>
 </template>
 <script>
-import WebsocketGreetings from "@/components/WebsocketGreetings.vue";
+import MainChatComponent from "@/components/MainChatComponent.vue";
+//import SignInComponent from "@/components/SignInComponent.vue";
+//import SignUpComponent from "@/components/SignUpComponent.vue";
 export default {
   name: "home",
   components: {
-    WebsocketGreetings,
+    MainChatComponent,
+    //SignInComponent,
+    //SignUpComponent,
   },
 };
 </script>
+<style>
+@import "./assets/swipe.min.css";
+</style>
