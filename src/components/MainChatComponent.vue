@@ -123,16 +123,19 @@
     <!-- Layout -->
   </main>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
+
 import ContactListComponent from "./ContactListComponent.vue";
 import NotificationListComponent from "./NotificationListComponent.vue";
 import DiscussionListComponent from "./DiscussionListComponent.vue";
 import SettingsMenuComponent from "./SettingsMenuComponent.vue";
 import ChatComponent from "./ChatComponent.vue";
-import AddContactChatComponent from "./AddContactChatComponent";
+import AddContactChatComponent from "./AddContactChatComponent.vue";
 import StartNewChatModalComponent from "./StartNewChatModalComponent.vue";
 import AddContactModalComponent from "./AddContactModalComponent.vue";
-export default {
+
+export default defineComponent({
   name: "mainchat",
   components: {
     ContactListComponent,
@@ -144,5 +147,5 @@ export default {
     StartNewChatModalComponent,
     AddContactModalComponent,
   },
-};
+});
 </script>
