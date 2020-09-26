@@ -1,21 +1,19 @@
 <template>
-  <div class="home">
-    <main-chat-component></main-chat-component>
-  </div>
+  <MainChatComponent />
 </template>
-<script>
-import MainChatComponent from "@/components/MainChatComponent.vue";
-//import SignInComponent from "@/components/SignInComponent.vue";
-//import SignUpComponent from "@/components/SignUpComponent.vue";
-export default {
-  name: "home",
+
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import MainChatComponent from "./components/MainChatComponent.vue";
+
+@Options({
   components: {
     MainChatComponent,
-    //SignInComponent,
-    //SignUpComponent,
   },
-};
+})
+export default class App extends Vue {}
 </script>
+
 <style>
 @import "./assets/swipe.min.css";
 </style>
