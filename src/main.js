@@ -1,14 +1,12 @@
-import Vue, { createApp } from "vue";
+import { createApp } from "vue";
 import App from "./App.vue";
 import $ from "jquery";
-import LoadScript from "vue-plugin-load-script";
 
-Vue.use(LoadScript);
+const app = createApp(App);
+
 window.jQuery = window.$ = $;
 
 require("bootstrap/dist/css/bootstrap.min.css");
 require("bootstrap/dist/js/bootstrap.min.js");
 
-Vue.loadScript("/js/swipe.min.js");
-
-createApp(App).mount("#app");
+app.mount("#app");
