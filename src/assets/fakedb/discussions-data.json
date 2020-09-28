@@ -1,0 +1,182 @@
+[
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000000" },
+    "name": "Lynn Hyde-Chambers",
+    "messages": 3,
+    "last_message": "Grass-roots clear-thinking database",
+    "status": "offline",
+    "photo": "avatar-male-4.jpg",
+    "last_message_date": "2020-07-22"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000001" },
+    "name": "Boothe Shervington",
+    "messages": 10,
+    "last_message": "Optional encompassing moratorium",
+    "status": "absent",
+    "photo": "avatar-male-2.jpg",
+    "last_message_date": "2020-04-27"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000002" },
+    "name": "Nero Barson",
+    "messages": 7,
+    "last_message": "Customer-focused coherent installation",
+    "status": "busy",
+    "photo": "avatar-female-5.jpg",
+    "last_message_date": "2020-04-21"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000003" },
+    "name": "Heath Trineman",
+    "messages": 6,
+    "last_message": "Programmable attitude-oriented interface",
+    "status": "busy",
+    "photo": "avatar-male-4.jpg",
+    "last_message_date": "2019-10-03"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000004" },
+    "name": "Julie Dalligan",
+    "messages": 8,
+    "last_message": "Upgradable zero administration flexibility",
+    "status": "absent",
+    "photo": "avatar-female-3.jpg",
+    "last_message_date": "2020-08-03"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000005" },
+    "name": "Eziechiele Mackett",
+    "messages": 13,
+    "last_message": "Innovative 24/7 infrastructure",
+    "status": "busy",
+    "photo": "avatar-male-2.jpg",
+    "last_message_date": "2019-11-25"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000006" },
+    "name": "Aldrich Siflet",
+    "messages": 1,
+    "last_message": "Inverse transitional success",
+    "status": "busy",
+    "photo": "avatar-male-2.jpg",
+    "last_message_date": "2020-09-11"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000007" },
+    "name": "Florry Stinton",
+    "messages": 2,
+    "last_message": "Ameliorated homogeneous contingency",
+    "status": "online",
+    "photo": "avatar-female-1.jpg",
+    "last_message_date": "2020-07-15"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000008" },
+    "name": "Elnora Beaushaw",
+    "messages": 3,
+    "last_message": "Reduced demand-driven database",
+    "status": "offline",
+    "photo": "avatar-female-2.jpg",
+    "last_message_date": "2020-09-02"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000009" },
+    "name": "Reg Hessenthaler",
+    "messages": 3,
+    "last_message": "Reverse-engineered human-resource solution",
+    "status": "offline",
+    "photo": "avatar-female-2.jpg",
+    "last_message_date": "2020-07-04"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c5900000a" },
+    "name": "Alfi Hurdidge",
+    "messages": 5,
+    "last_message": "Enhanced tangible core",
+    "status": "offline",
+    "photo": "avatar-male-3.jpg",
+    "last_message_date": "2019-09-29"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c5900000b" },
+    "name": "Karia Eppson",
+    "messages": 13,
+    "last_message": "Networked hybrid time-frame",
+    "status": "absent",
+    "photo": "avatar-male-1.jpg",
+    "last_message_date": "2020-04-23"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c5900000c" },
+    "name": "Doro Esseby",
+    "messages": 12,
+    "last_message": "Re-engineered transitional data-warehouse",
+    "status": "busy",
+    "photo": "avatar-male-1.jpg",
+    "last_message_date": "2020-08-20"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c5900000d" },
+    "name": "Missie Stalley",
+    "messages": 2,
+    "last_message": "Programmable clear-thinking solution",
+    "status": "online",
+    "photo": "avatar-female-1.jpg",
+    "last_message_date": "2020-06-01"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c5900000e" },
+    "name": "Levy Cosgrove",
+    "messages": 15,
+    "last_message": "Advanced bottom-line architecture",
+    "status": "offline",
+    "photo": "avatar-female-6.jpg",
+    "last_message_date": "2019-09-28"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c5900000f" },
+    "name": "Clint Lawson",
+    "messages": 15,
+    "last_message": "Ameliorated methodical throughput",
+    "status": "absent",
+    "photo": "avatar-female-6.jpg",
+    "last_message_date": "2019-10-05"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000010" },
+    "name": "Freeman Fourman",
+    "messages": 7,
+    "last_message": "Re-contextualized attitude-oriented methodology",
+    "status": "offline",
+    "photo": "avatar-female-5.jpg",
+    "last_message_date": "2020-05-03"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000011" },
+    "name": "Cherida Nisius",
+    "messages": 12,
+    "last_message": "Focused coherent standardization",
+    "status": "online",
+    "photo": "avatar-male-1.jpg",
+    "last_message_date": "2020-02-07"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000012" },
+    "name": "Humbert Joao",
+    "messages": 4,
+    "last_message": "Compatible dedicated Graphic Interface",
+    "status": "absent",
+    "photo": "avatar-female-3.jpg",
+    "last_message_date": "2020-03-05"
+  },
+  {
+    "id": { "$oid": "5f6fd4b6fc13ae2c59000013" },
+    "name": "Carley Ormerod",
+    "messages": 12,
+    "last_message": "Realigned user-facing approach",
+    "status": "online",
+    "photo": "avatar-female-5.jpg",
+    "last_message_date": "2020-05-08"
+  }
+]
