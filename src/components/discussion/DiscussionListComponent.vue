@@ -47,29 +47,36 @@
       <h1>Discussions</h1>
       <div class="list-group" id="chats" role="tablist">
         <a
-          v-bind:for="discussion in discussions"
+          v-for="discussion in discussions"
+          :key="discussion"
           href="#list-chat"
           class="filterDiscussions all unread single active"
           id="list-chat-list"
           data-toggle="list"
           role="tab"
         >
-          <p>
-            {{ discussion }}
-          </p>
           <img
             class="avatar-md"
-            src="img/avatars/"
+            :src="'img/avatars/' + discussion.photo"
             data-toggle="tooltip"
             data-placement="top"
-            title="Janette"
+            :title="discussion.name"
             alt="avatar"
           />
           <div class="status">
-            <i class="material-icons online">fiber_manual_record</i>
+            <i class="material-icons" :class="discussion.status"
+              >fiber_manual_record</i
+            >
           </div>
-          <div class="new bg-yellow">
-            <span>+7</span>
+          <div
+            class="new"
+            :class="{
+              'bg-red': discussion.messages >= 9,
+              'bg-yellow': discussion.messages >= 5 && discussion.messages <= 8,
+              'bg-green': discussion.messages >= 1 && discussion.messages <= 4,
+            }"
+          >
+            <span>+{{ discussion.messages }}</span>
           </div>
           <div class="data">
             <h5>{{ discussion.name }}</h5>
@@ -101,23 +108,12 @@ const DiscussionListComponent = defineComponent({
   name: "discussionlistcomponent",
   data() {
     return {
-      discussions: [
-        {
-          id: "Ola",
-          name: "Ola",
-          messages: "5",
-          lastMessage: "asdasd",
-          status: "busy",
-          photo: "null",
-          lastMessageDate: "9898-989-98",
-        },
-      ],
+      discussions: [] as Discussion[],
     };
   },
   mounted() {
     fakedata.forEach((element: Discussion) => {
-      //this.discussions.push(element as Discussion);
-      console.log(element);
+      this.discussions.push(element as Discussion);
     });
   },
 });
