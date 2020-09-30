@@ -69,12 +69,13 @@
     </div>
   </div>
 </template>
-<script>
-import { defineComponente } from "vue";
+<script lang="ts">
+import { defineComponent } from "vue";
 import SockJS from "sockjs-client";
 import Stomp from "webstomp-client";
-export default defineComponente({
-  name: "websocketdemo",
+
+const CompleteChat = defineComponent({
+  name: "completechat",
   data() {
     return {
       received_messages: [],
@@ -124,5 +125,7 @@ export default defineComponente({
     //this.connect();
   },
 });
+
+export default CompleteChat;
 </script>
 <style scoped=""></style>
