@@ -111,7 +111,7 @@ import NotificationListComponent from "./NotificationListComponent.vue";
 import DiscussionListComponent from "./discussion/DiscussionListComponent.vue";
 import SettingsMenuComponent from "./SettingsMenuComponent.vue";
 import ChatComponent from "./chat/ChatComponent.vue";
-import StartNewChatModalComponent from "./StartNewChatModalComponent.vue";
+import StartNewChatModalComponent from "./discussion/StartNewChatModalComponent.vue";
 
 export default defineComponent({
   name: "mainchat",
