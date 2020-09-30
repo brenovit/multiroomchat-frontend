@@ -35,7 +35,7 @@
                 type="text"
                 id="name"
                 class="form-control"
-                v-model="send_message"
+                v-model="sendMessage"
                 placeholder="Your name here..."
               />
             </div>
@@ -59,7 +59,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="item in received_messages" :key="item">
+              <tr v-for="item in receivedMessages" :key="item">
                 <td>{{ item }}</td>
               </tr>
             </tbody>
@@ -72,37 +72,43 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import SockJS from "sockjs-client";
-import Stomp from "webstomp-client";
+import Stomp, { Client } from "webstomp-client";
+
+interface Message {
+  content: string;
+}
 
 const CompleteChat = defineComponent({
   name: "completechat",
   data() {
     return {
-      received_messages: [],
-      send_message: null,
+      receivedMessages: [] as string[],
+      sendMessage: null,
       connected: false,
+      stompClient: {} as Client,
     };
   },
   methods: {
     send() {
-      console.log("Send message:" + this.send_message);
+      console.log("Send message:" + this.sendMessage);
       if (this.stompClient && this.stompClient.connected) {
-        const msg = { name: this.send_message };
+        const msg = { name: this.sendMessage };
         console.log(JSON.stringify(msg));
-        this.stompClient.send("/app/hello", JSON.stringify(msg), {});
+        this.stompClient.send("/app/chat", JSON.stringify(msg), {});
       }
     },
     connect() {
-      this.socket = new SockJS("http://localhost:8080/websocket");
-      this.stompClient = Stomp.over(this.socket);
+      const socket = new SockJS("http://localhost:8081/ws");
+      this.stompClient = Stomp.over(socket);
       this.stompClient.connect(
         {},
         (frame) => {
           this.connected = true;
           console.log(frame);
-          this.stompClient.subscribe("/topic/greetings", (tick) => {
+          this.stompClient.subscribe("/app/topic/chat", (tick) => {
             console.log(tick);
-            this.received_messages.push(JSON.parse(tick.body).content);
+            const message = JSON.parse(tick.body) as Message;
+            this.receivedMessages.push(message.content);
           });
         },
         (error) => {
