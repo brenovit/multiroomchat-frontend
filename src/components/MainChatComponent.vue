@@ -130,7 +130,7 @@ import ContactListComponent from "./ContactListComponent.vue";
 import NotificationListComponent from "./NotificationListComponent.vue";
 import DiscussionListComponent from "./discussion/DiscussionListComponent.vue";
 import SettingsMenuComponent from "./SettingsMenuComponent.vue";
-import ChatComponent from "./ChatComponent.vue";
+import ChatComponent from "./chat/ChatComponent.vue";
 import AddContactChatComponent from "./AddContactChatComponent.vue";
 import StartNewChatModalComponent from "./StartNewChatModalComponent.vue";
 import AddContactModalComponent from "./AddContactModalComponent.vue";
