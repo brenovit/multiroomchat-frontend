@@ -61,7 +61,9 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-export default defineComponent({
-  name: "TopBarChatComponent",
+const TopBarMenuComponent = defineComponent({
+  name: "topbarmenucomponent",
 });
+
+export default TopBarMenuComponent;
 </script>

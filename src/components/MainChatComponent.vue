@@ -97,26 +97,6 @@
             <chat-component></chat-component>
           </div>
           <!-- End of Babble -->
-          <!-- Start of Babble -->
-          <div
-            class="babble tab-pane fade"
-            id="list-empty"
-            role="tabpanel"
-            aria-labelledby="list-empty-list"
-          >
-            <chat-component></chat-component>
-          </div>
-          <!-- End of Babble -->
-          <!-- Start of Babble -->
-          <div
-            class="babble tab-pane fade"
-            id="list-request"
-            role="tabpanel"
-            aria-labelledby="list-request-list"
-          >
-            <add-contact-chat-component></add-contact-chat-component>
-          </div>
-          <!-- End of Babble -->
         </div>
       </div>
     </div>
@@ -131,9 +111,7 @@ import NotificationListComponent from "./NotificationListComponent.vue";
 import DiscussionListComponent from "./discussion/DiscussionListComponent.vue";
 import SettingsMenuComponent from "./SettingsMenuComponent.vue";
 import ChatComponent from "./chat/ChatComponent.vue";
-import AddContactChatComponent from "./AddContactChatComponent.vue";
 import StartNewChatModalComponent from "./StartNewChatModalComponent.vue";
-import AddContactModalComponent from "./AddContactModalComponent.vue";
 
 export default defineComponent({
   name: "mainchat",
@@ -143,9 +121,7 @@ export default defineComponent({
     DiscussionListComponent,
     SettingsMenuComponent,
     ChatComponent,
-    AddContactChatComponent,
     StartNewChatModalComponent,
-    AddContactModalComponent,
   },
 });
 </script>

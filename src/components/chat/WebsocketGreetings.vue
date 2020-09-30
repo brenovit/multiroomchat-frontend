@@ -70,9 +70,10 @@
   </div>
 </template>
 <script>
+import { defineComponente } from "vue";
 import SockJS from "sockjs-client";
 import Stomp from "webstomp-client";
-export default {
+export default defineComponente({
   name: "websocketdemo",
   data() {
     return {
@@ -91,7 +92,7 @@ export default {
       }
     },
     connect() {
-      this.socket = new SockJS("http://localhost:8080/gs-guide-websocket");
+      this.socket = new SockJS("http://localhost:8080/websocket");
       this.stompClient = Stomp.over(this.socket);
       this.stompClient.connect(
         {},
@@ -122,6 +123,6 @@ export default {
   mounted() {
     //this.connect();
   },
-};
+});
 </script>
 <style scoped=""></style>

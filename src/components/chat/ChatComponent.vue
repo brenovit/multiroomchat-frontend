@@ -3,7 +3,7 @@
     <!-- Start of Chat -->
     <div class="chat" id="chat1">
       <div class="top">
-        <top-bar-chat-component />
+        <top-bar-menu-component />
       </div>
       <div class="content" id="content">
         <div class="container">
@@ -177,14 +177,14 @@ import { defineComponent } from "vue";
 import CallComponent from "./CallComponent";
 import TypingComponent from "./TypingComponent";
 import InputComponent from "./InputMessageComponent";
-import TopBarChatComponent from "./TopBarChatComponent";
+import TopBarMenuComponent from "./TopBarMenuComponent";
 
 const ChatComponent = defineComponent({
   name: "chatcomponent",
   components: {
     TypingComponent,
     InputComponent,
-    TopBarChatComponent,
+    TopBarMenuComponent,
   },
 });
 

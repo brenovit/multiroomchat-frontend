@@ -27,7 +27,9 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-export default defineComponent({
-  name: "InputComponent",
+const InputComponent = defineComponent({
+  name: "inputcomponent",
 });
+
+export default InputComponent;
 </script>
