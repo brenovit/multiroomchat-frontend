@@ -55,7 +55,7 @@
           <table id="conversation" class="table table-striped">
             <thead>
               <tr>
-                <th>Greetings</th>
+                <th>Greetings | messages: {{ notifications }}</th>
               </tr>
             </thead>
             <tbody>
@@ -76,7 +76,11 @@ import Stomp, { Client } from "webstomp-client";
 
 interface Message {
   content: string;
+  count: number;
 }
+
+let stompChatClient: Client;
+let stompNotificationClient: Client;
 
 const CompleteChat = defineComponent({
   name: "completechat",
@@ -85,29 +89,30 @@ const CompleteChat = defineComponent({
       receivedMessages: [] as string[],
       sendMessage: null,
       connected: false,
-      stompClient: {} as Client,
+      notifications: 0,
     };
   },
   methods: {
     send() {
       console.log("Send message:" + this.sendMessage);
-      if (this.stompClient && this.stompClient.connected) {
-        const msg = { name: this.sendMessage };
+      if (stompChatClient && stompChatClient.connected) {
+        const msg = { content: this.sendMessage, count: this.notifications };
         console.log(JSON.stringify(msg));
-        this.stompClient.send("/app/chat", JSON.stringify(msg), {});
+        stompChatClient.send("/app/chat", JSON.stringify(msg), {});
       }
     },
     connect() {
       const socket = new SockJS("http://localhost:8081/ws");
-      this.stompClient = Stomp.over(socket);
-      this.stompClient.connect(
+      stompChatClient = Stomp.over(socket);
+      stompChatClient.connect(
         {},
         (frame) => {
           this.connected = true;
           console.log(frame);
-          this.stompClient.subscribe("/app/topic/chat", (tick) => {
+          stompChatClient.subscribe("/topic/chat", (tick) => {
             console.log(tick);
             const message = JSON.parse(tick.body) as Message;
+            this.notifications += message.count;
             this.receivedMessages.push(message.content);
           });
         },
@@ -118,8 +123,8 @@ const CompleteChat = defineComponent({
       );
     },
     disconnect() {
-      if (this.stompClient) {
-        this.stompClient.disconnect();
+      if (stompChatClient) {
+        stompChatClient.disconnect();
       }
       this.connected = false;
     },
