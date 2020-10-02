@@ -102,18 +102,40 @@ const CompleteChat = defineComponent({
       }
     },
     connect() {
-      const socket = new SockJS("http://localhost:8081/ws");
+      this.connectChat();
+      this.connectNotification();
+    },
+    connectChat() {
+      const socket = new SockJS(process.env.VUE_APP_SERVER_HOST);
       stompChatClient = Stomp.over(socket);
       stompChatClient.connect(
         {},
         (frame) => {
           this.connected = true;
-          console.log(frame);
           stompChatClient.subscribe("/topic/chat", (tick) => {
             console.log(tick);
             const message = JSON.parse(tick.body) as Message;
-            this.notifications += message.count;
+            this.notifications = message.count;
             this.receivedMessages.push(message.content);
+          });
+        },
+        (error) => {
+          console.log(error);
+          this.connected = false;
+        }
+      );
+    },
+    connectNotification() {
+      const socket = new SockJS(process.env.VUE_APP_SERVER_HOST);
+      stompNotificationClient = Stomp.over(socket);
+      stompNotificationClient.connect(
+        {},
+        (frame) => {
+          this.connected = true;
+          stompNotificationClient.subscribe("/topic/notification", (tick) => {
+            console.log(tick);
+            const message = JSON.parse(tick.body);
+            this.notifications = message;
           });
         },
         (error) => {
@@ -125,6 +147,10 @@ const CompleteChat = defineComponent({
     disconnect() {
       if (stompChatClient) {
         stompChatClient.disconnect();
+      }
+
+      if (stompNotificationClient) {
+        stompNotificationClient.disconnect();
       }
       this.connected = false;
     },
