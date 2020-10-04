@@ -8,18 +8,6 @@
             <div class="col-md-12">
               <div class="content">
                 <h1>Sign in to Swipe</h1>
-                <div class="third-party">
-                  <button class="btn item bg-blue">
-                    <i class="material-icons">pages</i>
-                  </button>
-                  <button class="btn item bg-teal">
-                    <i class="material-icons">party_mode</i>
-                  </button>
-                  <button class="btn item bg-purple">
-                    <i class="material-icons">whatshot</i>
-                  </button>
-                </div>
-                <p>or use your email account:</p>
                 <form>
                   <div class="form-group">
                     <input
@@ -45,13 +33,11 @@
                       <i class="material-icons">lock_outline</i>
                     </button>
                   </div>
-                  <button
-                    type="submit"
-                    class="btn button"
-                    formaction="index-2.html"
-                  >
-                    Sign In
-                  </button>
+                  <router-link to="/">
+                    <button type="submit" class="btn button">
+                      Sign In
+                    </button>
+                  </router-link>
                   <div class="callout">
                     <span
                       >Don't have account?
@@ -75,7 +61,9 @@
                 Enter your personal details and start your journey with Swipe
                 today.
               </p>
-              <a href="sign-up.html" class="btn button">Sign Up</a>
+              <router-link to="/signup" class="btn button">
+                Sign Up
+              </router-link>
             </div>
           </div>
         </div>
@@ -85,6 +73,12 @@
     <!-- Layout -->
   </main>
 </template>
-<script>
-export default {};
+<script lang="ts">
+import { defineComponent } from "vue";
+
+const SignInComponent = defineComponent({
+  name: "signincomponent",
+});
+
+export default SignInComponent;
 </script>

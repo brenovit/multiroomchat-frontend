@@ -25,9 +25,11 @@
               <a href="#settings" data-toggle="tab"
                 ><i class="material-icons">settings</i></a
               >
-              <button class="btn power" onclick="visitPage();">
-                <i class="material-icons">power_settings_new</i>
-              </button>
+              <router-link to="/signin">
+                <button class="btn power" onclick="visitPage();">
+                  <i class="material-icons">power_settings_new</i>
+                </button>
+              </router-link>
             </div>
           </div>
         </div>

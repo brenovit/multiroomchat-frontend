@@ -17,6 +17,7 @@
     "sockjs-client": "^1.5.0",
     "vue": "^3.0.0-0",
     "vue-class-component": "^8.0.0-0",
+    "vue-router": "^4.0.0-beta.13",
     "webstomp-client": "^1.2.6"
   },
   "devDependencies": {

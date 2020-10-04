@@ -98,7 +98,7 @@ const CompleteChat = defineComponent({
       if (stompChatClient && stompChatClient.connected) {
         const msg = { content: this.sendMessage, count: this.notifications };
         console.log(JSON.stringify(msg));
-        stompChatClient.send("/app/chat", JSON.stringify(msg), {});
+        stompChatClient.send("/app/message", JSON.stringify(msg), {});
       }
     },
     connect() {

@@ -1,16 +1,10 @@
 <template>
-  <MainChatComponent />
+  <router-view />
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import MainChatComponent from "./components/MainChatComponent.vue";
+import { Vue } from "vue-class-component";
 
-@Options({
-  components: {
-    MainChatComponent,
-  },
-})
 export default class App extends Vue {}
 </script>
 

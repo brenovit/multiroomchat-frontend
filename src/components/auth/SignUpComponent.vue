@@ -8,18 +8,6 @@
             <div class="col-md-12">
               <div class="content">
                 <h1>Create Account</h1>
-                <div class="third-party">
-                  <button class="btn item bg-blue">
-                    <i class="material-icons">pages</i>
-                  </button>
-                  <button class="btn item bg-teal">
-                    <i class="material-icons">party_mode</i>
-                  </button>
-                  <button class="btn item bg-purple">
-                    <i class="material-icons">whatshot</i>
-                  </button>
-                </div>
-                <p>or use your email for registration:</p>
                 <form class="signup">
                   <div class="form-parent">
                     <div class="form-group">
@@ -59,13 +47,10 @@
                       <i class="material-icons">lock_outline</i>
                     </button>
                   </div>
-                  <button
-                    type="submit"
-                    class="btn button"
-                    formaction="index-2.html"
-                  >
+                  <router-link to="/signin" class="btn button">
                     Sign Up
-                  </button>
+                  </router-link>
+
                   <div class="callout">
                     <span
                       >Already a member?
@@ -89,7 +74,9 @@
                 To keep connected with your friends please login with your
                 personal info.
               </p>
-              <a href="sign-in.html" class="btn button">Sign In</a>
+              <router-link to="/signin" class="btn button">
+                Sign In
+              </router-link>
             </div>
           </div>
         </div>
@@ -99,6 +86,12 @@
     <!-- Layout -->
   </main>
 </template>
-<script>
-export default {};
+<script lang="ts">
+import { defineComponent } from "vue";
+
+const SignUpComponent = defineComponent({
+  name: "signupcomponent",
+});
+
+export default SignUpComponent;
 </script>
