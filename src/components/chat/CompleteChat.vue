@@ -80,7 +80,6 @@ interface Message {
 }
 
 let stompChatClient: Client;
-let stompNotificationClient: Client;
 
 const CompleteChat = defineComponent({
   name: "completechat",
@@ -103,7 +102,6 @@ const CompleteChat = defineComponent({
     },
     connect() {
       this.connectChat();
-      this.connectNotification();
     },
     connectChat() {
       const socket = new SockJS(process.env.VUE_APP_SERVER_HOST);
@@ -118,21 +116,7 @@ const CompleteChat = defineComponent({
             this.notifications = message.count;
             this.receivedMessages.push(message.content);
           });
-        },
-        (error) => {
-          console.log(error);
-          this.connected = false;
-        }
-      );
-    },
-    connectNotification() {
-      const socket = new SockJS(process.env.VUE_APP_SERVER_HOST);
-      stompNotificationClient = Stomp.over(socket);
-      stompNotificationClient.connect(
-        {},
-        (frame) => {
-          this.connected = true;
-          stompNotificationClient.subscribe("/topic/notification", (tick) => {
+          stompChatClient.subscribe("/topic/notification", (tick) => {
             console.log(tick);
             const message = JSON.parse(tick.body);
             this.notifications = message;
@@ -147,10 +131,6 @@ const CompleteChat = defineComponent({
     disconnect() {
       if (stompChatClient) {
         stompChatClient.disconnect();
-      }
-
-      if (stompNotificationClient) {
-        stompNotificationClient.disconnect();
       }
       this.connected = false;
     },

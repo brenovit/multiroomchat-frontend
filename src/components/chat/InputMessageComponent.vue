@@ -8,6 +8,11 @@
             placeholder="Start typing for reply..."
             rows="1"
           ></textarea>
+          <input
+            class="form-control"
+            placeholder="Start typing for reply..."
+            type="text"
+          />
           <button class="btn emoticons">
             <i class="material-icons">insert_emoticon</i>
           </button>
